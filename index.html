@@ -33,7 +33,7 @@
 							<h3 style="font-size: 25px; color: white;"><strong>السلام عليكم ورحمة الله وبركاته</strong></h3>
 							<h1 style="font-size: 45px;">Walimatul Khitan<br/>Farell Raydiansyah</h1>
 							<div class="simply-countdown simply-countdown-one"></div>
-							<p><a href="#" class="btn btn-default btn-sm">Lihat Undangan</a></p>
+							<p><a href="#fh5co-couple" class="btn btn-default btn-sm">Lihat Undangan</a></p>
 						</div>
 					</div>
 				</div>
@@ -79,43 +79,35 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<span>Bismillah</span>
-					<h2>InsyaAllah akan dilaksanakan pada</h2>
+					<h2>Waktu & Lokasi Acara</h2>
 				</div>
 			</div>
 			<div class="row">
-				<div class="display-t">
-					<div class="display-tc">
-						<div class="col-md-10 col-md-offset-1">
-							<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
-									<h3>Khitan</h3>
-									<div class="event-col">
-										<i class="icon-clock"></i>
-										<span>06:00 WIB</span>
-									</div>
-									<div class="event-col">
-										<i class="icon-calendar"></i>
-										<span>Rabu, 21 Januari 2026</span>
-										<span>6 Syawal 1443</span>
-									</div>
-									<p>Kp Bojong Ds Sepatnunggal Kec Sodong Hilir Kab Tasikmalaya <br/>(Kediaman Bapak Mimin Muhaemin)</p>
-								</div>
+				<div class="col-md-10 col-md-offset-1">
+					<div class="col-md-6 col-sm-6 text-center">
+						<div class="event-wrap animate-box">
+							<h3>Waktu Pelaksanaan</h3>
+							<div class="event-col">
+								<i class="icon-clock"></i>
+								<span>06:00 WIB - Selesai</span>
 							</div>
-							<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
-									<h3>Tabligh Akbar</h3>
-									<div class="event-col">
-										<i class="icon-clock"></i>
-										<span>19:30 WIB</span>
-									</div>
-									<div class="event-col">
-										<i class="icon-calendar"></i>
-										<span>Jum'at, 5 Mei 2022</span>
-										<span>6 Syawal 1443</span>
-									</div>
-									<p>Kp Bojong Ds Sepatnunggal Kec Sodong Hilir Kab Tasikmalaya <br/>(Halaman Rumah Bapak Mimin Muhaemin)</p>
-								</div>
+							<div class="event-col">
+								<i class="icon-calendar"></i>
+								<span>Rabu, 21 Januari 2026</span>
+								<span>6 Syawal 1443 H</span>
 							</div>
+							<p>Kp Bojong Ds Sepatnunggal Kec Sodong Hilir Kab Tasikmalaya <br/>(Kediaman Bapak Mimin Muhaemin)</p>
+						</div>
+					</div>
+					<div class="col-md-6 col-sm-6 text-center">
+						<div class="event-wrap animate-box">
+							<h3>Lokasi Acara</h3>
+							<div class="responsive-map">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.514652431666!2d108.03194557455047!3d-7.518776074185252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e660144d1838183%3A0xc6c4f9a0c7c3407e!2sSodonghilir%2C%20Tasikmalaya%20Regency%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid&maptype=satellite" width="100%" height="200" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+							</div>
+							<p style="margin-top: 15px;">
+								<a href="https://goo.gl/maps/5pA884Y72mY76yT87" target="_blank" class="btn btn-primary btn-sm">Buka di Google Maps</a>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -209,11 +201,12 @@
 	<script src="js/main.js"></script>
 
 	<script>
-    var d = new Date(2026, 0, 21);
+    var d = new Date(2026, 0, 21); // Tanggal 21 Januari 2026
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
         month: d.getMonth() + 1,
-        day: d.getDate()
+        day: d.getDate(),
+        enableUtc: false
     });
 	</script>
 

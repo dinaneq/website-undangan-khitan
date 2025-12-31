@@ -79,17 +79,17 @@
 							<h3>Waktu Pelaksanaan</h3>
 							<div class="event-col"><i class="icon-clock"></i><span>06:00 WIB - Selesai</span></div>
 							<div class="event-col"><i class="icon-calendar"></i><span>Rabu, 21 Januari 2026</span><span>6 Syawal 1443 H</span></div>
-							<p>Kp Bojong Ds Sepatnunggal Kec Sodong Hilir Kab Tasikmalaya <br/>(Kediaman Bapak Mimin Muhaemin)</p>
+							<p>Sikapat RT 02 RW 05, Grumbul Watujaran, Kec. Sumbang, Kabupaten Banyumas 53183 <br/>(Kediaman Bapak Slamet (Mame))</p>
 						</div>
 					</div>
 					<div class="col-md-6 col-sm-6 text-center">
 						<div class="event-wrap animate-box">
 							<h3>Lokasi Acara</h3>
 							<div class="responsive-map">
-								<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3957.195000000000!2d109.2653659!3d-7.3117755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMTgnNDIuNCJTIDEwOcKwMTUnNTUuMyJF!5e0!3m2!1sid!2sid!4v1700000000000&maptype=satellite" width="100%" height="200" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+								<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3956.843734006509!2d109.2653659!3d-7.3117755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid&maptype=satellite" width="100%" height="200" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
 							</div>
 							<p style="margin-top: 15px;">
-								<a href="https://www.google.com/maps/search/?api=1&query=-7.3117755,109.2653659" target="_blank" class="btn btn-primary btn-sm">Buka di Google Maps</a>
+								<a href="https://www.google.com/maps?q=-7.3117755,109.2653659&t=k" target="_blank" class="btn btn-primary btn-sm">Buka di Google Maps</a>
 							</p>
 						</div>
 					</div>
@@ -98,7 +98,7 @@
 		</div>
 	</div>
 
-	<div id="fh5co-gallery">
+	<div id="fh5co-gallery" class="fh5co-section-gray">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
@@ -110,13 +110,13 @@
 				<div class="col-md-12 animate-box">
 					<div class="owl-carousel owl-carousel-fullwidth">
 						<div class="item">
-							<img src="images/gallery-1.jpeg" class="img-responsive" style="margin: 0 auto; border-radius: 10px;">
+							<img src="images/gallery-1.jpeg" class="img-responsive" style="margin: 0 auto; border-radius: 10px; max-height: 500px;">
 						</div>
 						<div class="item">
-							<img src="images/arsya-2.jpeg" class="img-responsive" style="margin: 0 auto; border-radius: 10px;">
+							<img src="images/arsya-2.jpeg" class="img-responsive" style="margin: 0 auto; border-radius: 10px; max-height: 500px;">
 						</div>
 						<div class="item">
-							<img src="images/arsya-3.jpeg" class="img-responsive" style="margin: 0 auto; border-radius: 10px;">
+							<img src="images/arsya-3.jpeg" class="img-responsive" style="margin: 0 auto; border-radius: 10px; max-height: 500px;">
 						</div>
 					</div>
 				</div>
@@ -172,15 +172,17 @@
         enableUtc: false
     });
 
-	// Inisialisasi Slide Gallery
-	$('.owl-carousel-fullwidth').owlCarousel({
-		items: 1,
-		loop: true,
-		margin: 10,
-		autoplay: true,
-		autoplayTimeout: 3000,
-		smartSpeed: 800,
-		nav: false
+	// Pengaturan Slide Gallery Otomatis
+	$(document).ready(function(){
+		$('.owl-carousel-fullwidth').owlCarousel({
+			items: 1,
+			loop: true,
+			margin: 10,
+			autoplay: true,
+			autoplayTimeout: 3000,
+			smartSpeed: 800,
+			nav: false
+		});
 	});
 	</script>
 	</body>

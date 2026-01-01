@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Sembunyikan Navigasi & Menu */
         .fh5co-nav-toggle { display: none !important; }
         #fh5co-offcanvas { display: none !important; }
 
@@ -75,9 +74,19 @@
 
     <div id="overlay">
         <div class="animate-box">
-            <h3 style="color: white; font-family: 'Work Sans', sans-serif; letter-spacing: 2px;">WALIMATUL KHITAN</h3>
-            <h1 style="font-family: 'Sacramento', cursive; font-size: 55px; margin: 20px 0;">Farell Raydiansyah</h1>
-            <p style="font-size: 16px; margin-bottom: 30px;">Kepada Bapak/Ibu/Saudara/i,<br>Kami mengundang Anda untuk hadir dalam doa restu.</p>
+            <h3 style="color: white; font-family: 'Work Sans', sans-serif; letter-spacing: 2px; font-size: 14px;">WALIMATUL KHITAN</h3>
+            
+            <div style="margin: 20px auto; width: 150px; height: 150px; border-radius: 50%; border: 3px solid white; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+                <img src="img/farel.jpg" alt="Farell" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+            <h1 style="font-family: 'Sacramento', cursive; font-size: 55px; margin: 10px 0; color: white !important;">Farell Raydiansyah</h1>
+            
+            <div id="guest-box" style="margin-top: 20px; margin-bottom: 30px;">
+                <p style="font-size: 14px; margin-bottom: 5px; opacity: 0.9; color: white;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <h2 id="guest-name" style="color: white; font-family: 'Work Sans', sans-serif; font-size: 24px; font-weight: 600;">Tamu Undangan</h2>
+            </div>
+
             <button onclick="openInvitation()" class="btn btn-primary" style="border-radius: 30px; padding: 12px 30px;">
                 <i class="icon-mail"></i> Buka Undangan
             </button>
@@ -161,10 +170,10 @@
                                 <h3>Lokasi Acara</h3>
                                 <span class="location-text">Sikapat RT 02 RW 05, Grumbul Watujaran, Kec. Sumbang, Kabupaten Banyumas 53183 <br/>(Kediaman Bapak Slamet (Mame))</span>			
                                 <div class="responsive-map">
-                                    <iframe src="https://maps.google.com/maps?q=-7.3117596,109.2653438&t=k&z=18&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d989.1578652317135!2d109.2653438!3d-7.3117596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMTgnNDIuMyJTIDEwOcKwMTUnNTUuMiJF!5e1!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid&t=k" width="100%" height="350" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
                                 </div>
                                 <p style="margin-top: 20px;">
-                                    <a href="https://www.google.com/maps?q=-7.3117596,109.2653438&t=k&z=18" target="_blank" class="btn btn-primary btn-sm">Buka di Google Maps</a>
+                                    <a href="https://www.google.com/maps?q=-7.3117596,109.2653438&t=k" target="_blank" class="btn btn-primary btn-sm">Buka di Google Maps</a>
                                 </p>
                             </div>
                         </div>
@@ -238,19 +247,22 @@
     <script src="js/main.js"></script>
 
     <script>
-        function openInvitation() {
-            // Putar Musik
-            var audio = document.getElementById("bgAudio");
-            audio.play().catch(function(error) {
-                console.log("Autoplay dicegah browser, tapi musik akan jalan setelah klik.");
-            });
+        function getGuestName() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const guestName = urlParams.get('to');
+            if (guestName) {
+                document.getElementById('guest-name').innerText = guestName.replace(/\+/g, ' ').replace(/%20/g, ' ');
+            }
+        }
 
-            // Animasi Overlay
+        function openInvitation() {
+            var audio = document.getElementById("bgAudio");
+            audio.play();
+
             var overlay = document.getElementById("overlay");
             overlay.style.transform = "translateY(-100%)";
             overlay.style.opacity = "0";
             
-            // Tampilkan Konten
             document.getElementById("main-content").classList.add("visible");
             document.body.classList.remove("noscroll");
 
@@ -259,7 +271,8 @@
             }, 800);
         }
 
-        // Countdown Timer
+        window.onload = getGuestName;
+
         var d = new Date(2026, 0, 21);
         simplyCountdown('.simply-countdown-one', {
             year: d.getFullYear(),

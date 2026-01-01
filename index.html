@@ -26,17 +26,14 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-        /* Sembunyikan Navigasi */
+        /* Sembunyikan Navigasi & Menu */
         .fh5co-nav-toggle { display: none !important; }
         #fh5co-offcanvas { display: none !important; }
 
         /* Gaya Overlay (Landing Page) */
         #overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: url('images/img_bg_2.jpg') no-repeat center center;
             background-size: cover;
             z-index: 9999;
@@ -52,18 +49,24 @@
             content: "";
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.65);
             z-index: -1;
         }
 
-        /* Hilangkan scroll saat overlay aktif */
         body.noscroll { overflow: hidden; }
 
-        /* Konten utama yang disembunyikan */
-        #main-content { opacity: 0; transition: opacity 1s; }
-        #main-content.visible { opacity: 1; }
+        #main-content { 
+            opacity: 0; 
+            visibility: hidden;
+            transition: opacity 1s; 
+        }
+        
+        #main-content.visible { 
+            opacity: 1; 
+            visibility: visible;
+        }
 
-        .location-text { margin-bottom: 20px; display: block; font-size: 16px; color: rgba(255,255,255,0.8); }
+        .location-text { margin-bottom: 20px; display: block; font-size: 16px; color: rgba(255,255,255,0.9); }
     </style>
 
     <script src="js/modernizr-2.6.2.min.js"></script>
@@ -71,11 +74,11 @@
 <body class="noscroll">
 
     <div id="overlay">
-        <div>
-            <h3 style="color: white; font-family: 'Work Sans', Arial, sans-serif; letter-spacing: 2px;">WALIMATUL KHITAN</h3>
-            <h1 style="font-family: 'Sacramento', cursive; font-size: 60px; margin: 20px 0;">Farell Raydiansyah</h1>
-            <p style="font-size: 16px; margin-bottom: 30px;">Kepada Bapak/Ibu/Saudara/i,<br>Kami mengundang Anda untuk hadir.</p>
-            <button onclick="openInvitation()" class="btn btn-primary" style="border-radius: 30px; padding: 15px 30px;">
+        <div class="animate-box">
+            <h3 style="color: white; font-family: 'Work Sans', sans-serif; letter-spacing: 2px;">WALIMATUL KHITAN</h3>
+            <h1 style="font-family: 'Sacramento', cursive; font-size: 55px; margin: 20px 0;">Farell Raydiansyah</h1>
+            <p style="font-size: 16px; margin-bottom: 30px;">Kepada Bapak/Ibu/Saudara/i,<br>Kami mengundang Anda untuk hadir dalam doa restu.</p>
+            <button onclick="openInvitation()" class="btn btn-primary" style="border-radius: 30px; padding: 12px 30px;">
                 <i class="icon-mail"></i> Buka Undangan
             </button>
         </div>
@@ -116,7 +119,7 @@
                     <div class="couple-wrap animate-box">
                         <div class="couple-half" style="float: none; margin: 0 auto; width: 100%; text-align: center;">
                             <div class="groom">
-                                <img src="img/farel.jpg" alt="Farell Raydiansyah" class="img-responsive" style="margin: 0 auto;">
+                                <img src="img/farel.jpg" alt="Farell Raydiansyah" class="img-responsive" style="margin: 0 auto; border-radius: 50%;">
                             </div>
                             <div class="desc-groom">
                                 <h3><strong>Farell Raydiansyah</strong></h3>
@@ -158,10 +161,10 @@
                                 <h3>Lokasi Acara</h3>
                                 <span class="location-text">Sikapat RT 02 RW 05, Grumbul Watujaran, Kec. Sumbang, Kabupaten Banyumas 53183 <br/>(Kediaman Bapak Slamet (Mame))</span>			
                                 <div class="responsive-map">
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3956.840742129596!2d109.26317727499!3d-7.312154392695841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMTgnNDMuOCJTIDEwOcKwMTUnNTYuNyJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                                    <iframe src="https://maps.google.com/maps?q=-7.367119,109.289110&t=k&z=18&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
                                 </div>
-                                <p style="margin-top: 15px;">
-                                    <a href="https://maps.google.com/?q=-7.3117755,109.2653659" target="_blank" class="btn btn-primary btn-sm">Buka di Google Maps</a>
+                                <p style="margin-top: 20px;">
+                                    <a href="https://www.google.com/maps?q=-7.367119,109.289110&t=k&z=18" target="_blank" class="btn btn-primary btn-sm">Buka di Google Maps</a>
                                 </p>
                             </div>
                         </div>
@@ -235,27 +238,28 @@
     <script src="js/main.js"></script>
 
     <script>
-        // FUNGSI UNTUK MEMBUKA UNDANGAN
         function openInvitation() {
-            // 1. Putar Musik
+            // Putar Musik
             var audio = document.getElementById("bgAudio");
-            audio.play();
+            audio.play().catch(function(error) {
+                console.log("Autoplay dicegah browser, tapi musik akan jalan setelah klik.");
+            });
 
-            // 2. Hilangkan Overlay dengan animasi geser ke atas
+            // Animasi Overlay
             var overlay = document.getElementById("overlay");
             overlay.style.transform = "translateY(-100%)";
             overlay.style.opacity = "0";
             
-            // 3. Munculkan Konten Utama & Aktifkan Scroll
+            // Tampilkan Konten
             document.getElementById("main-content").classList.add("visible");
             document.body.classList.remove("noscroll");
 
-            // 4. Hapus overlay dari DOM setelah animasi selesai agar tidak menghalangi klik
             setTimeout(function() {
                 overlay.style.display = "none";
             }, 800);
         }
 
+        // Countdown Timer
         var d = new Date(2026, 0, 21);
         simplyCountdown('.simply-countdown-one', {
             year: d.getFullYear(),

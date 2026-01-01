@@ -249,7 +249,7 @@
     <script>
         function getGuestName() {
             const urlParams = new URLSearchParams(window.location.search);
-            const guestName = urlParams.get('to');
+            const guestName = urlParams.get('kepada');
             if (guestName) {
                 document.getElementById('guest-name').innerText = guestName.replace(/\+/g, ' ').replace(/%20/g, ' ');
             }

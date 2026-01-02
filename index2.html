@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Walimatul Khitan Farell Raydiansyah</title>
+    
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3391/3391158.png" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Alata&family=DMSans:wght@400;700&family=Sacramento&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <style>
+        :root {
+            --primary: #8a6d5d;
+            --secondary: #e9e5df;
+            --accent: #f19c7f;
+            --text-dark: #452626;
+        }
+
+        body { 
+            font-family: 'DM Sans', sans-serif; 
+            background-color: #fcfcfc; 
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* --- LOADING SCREEN --- */
+        #loading-screen {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #fff; z-index: 99999; display: flex;
+            flex-direction: column; align-items: center; justify-content: center;
+        }
+
+        /* --- COVER OVERLAY --- */
+        #coverModal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/img_bg_2.jpg');
+            background-size: cover; background-position: center;
+            z-index: 9999; display: flex; align-items: center; justify-content: center;
+            color: white; text-align: center; transition: all 1s ease;
+        }
+
+        .img-cover {
+            width: 160px; height: 160px; border-radius: 50%;
+            border: 4px solid white; object-fit: cover;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        .btn-open {
+            background-color: var(--accent); color: white;
+            border: none; padding: 12px 30px; border-radius: 50px;
+            font-weight: bold; transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn-open:hover { transform: scale(1.05); background-color: var(--primary); color: white; }
+
+        /* --- MAIN CONTENT --- */
+        .section-box {
+            padding: 80px 20px; text-align: center;
+        }
+
+        .khitan-title {
+            font-family: 'Sacramento', cursive;
+            font-size: 3.5rem; color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .card-info {
+            background: white; border-radius: 20px; padding: 30px;
+            border: 1px dashed var(--primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        /* --- MUSIC BOX --- */
+        .music-box {
+            position: fixed; bottom: 20px; left: 20px; z-index: 999;
+            background: white; width: 45px; height: 45px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); cursor: pointer;
+        }
+
+        .rotating { animation: rotation 3s infinite linear; }
+        @keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(359deg); } }
+
+        /* --- MAPS --- */
+        .map-wrapper {
+            border-radius: 20px; overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loading-screen">
+        <div class="spinner-border text-brown" role="status"></div>
+        <p class="mt-3">MOHON TUNGGU...</p>
+    </div>
+
+    <audio id="backsound" loop>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-box" onclick="controlMusic()">
+        <i id="music-icon" class="bi bi-disc text-primary fs-4"></i>
+    </div>
+
+    <div id="coverModal">
+        <div class="container">
+            <div class="animate__animated animate__zoomIn">
+                <img src="img/farel.jpg" class="img-cover" alt="Farell">
+                <p class="mb-2" style="letter-spacing: 2px;">WALIMATUL KHITAN</p>
+                <h1 class="khitan-title text-white">Farell Raydiansyah</h1>
+                
+                <div class="my-4 py-3" style="background: rgba(255,255,255,0.1); border-radius: 15px;">
+                    <p class="mb-1 small">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                    <h3 id="guest-name" class="fw-bold">Tamu Undangan</h3>
+                </div>
+
+                <button class="btn-open" onclick="startInvitation()">
+                    <i class="bi bi-envelope-paper-fill me-2"></i> BUKA UNDANGAN
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div id="content" style="display:none;">
+        
+        <header class="section-box d-flex align-items-center justify-content-center" 
+                style="min-height: 80vh; background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('images/img_bg_2.jpg'); background-size: cover;">
+            <div class="animate__animated animate__fadeIn">
+                <p>Assalamuallaikum Wr. Wb.</p>
+                <h1 class="khitan-title">Farell Raydiansyah</h1>
+                <p class="px-3">Mohon doa restu pada acara khitan putra kami.</p>
+            </div>
+        </header>
+
+        <section class="section-box bg-light">
+            <div class="container">
+                <h2 class="fw-bold mb-5">Waktu & Lokasi</h2>
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card-info animate__animated animate__fadeInLeft">
+                            <i class="bi bi-calendar-event fs-1 mb-3 d-block"></i>
+                            <h3>Tasyakuran</h3>
+                            <p>Minggu - Selasa<br><strong>18 - 20 Januari 2026</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-info animate__animated animate__fadeInRight">
+                            <i class="bi bi-check2-circle fs-1 mb-3 d-block"></i>
+                            <h3>Khitan</h3>
+                            <p>Rabu<br><strong>21 Januari 2026</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-5 card-info">
+                    <h4 class="mb-4">Lokasi Acara</h4>
+                    <p>Sikapat RT 02 RW 05, Kec. Sumbang, Banyumas<br>(Kediaman Bapak Slamet Mame)</p>
+                    <div class="map-wrapper mb-4">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d15826.98064403072!2d109.2653438!3d-7.3117596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMTgnNDIuMyJTIDEwOcKwMTUnNTUuMiJF!5e1!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid&t=k" 
+                                width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <a href="https://www.google.com/maps?q=-7.3117596,109.2653438" target="_blank" class="btn btn-outline-dark rounded-pill">
+                        <i class="bi bi-geo-alt me-2"></i> PENUNJUK JALAN
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="section-box">
+            <p>Atas kehadiran dan doa restunya,<br>kami ucapkan terima kasih.</p>
+            <p class="fw-bold mt-4">Keluarga Bapak Slamet (Mame) & Ibu Warsih</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // 1. Ambil Nama Tamu dari URL ?kepada=...
+        const urlParams = new URLSearchParams(window.location.search);
+        const tamu = urlParams.get('kepada');
+        if (tamu) {
+            document.getElementById('guest-name').innerText = tamu.replace(/\+/g, ' ');
+        }
+
+        // 2. Loading Screen
+        $(window).on('load', function() {
+            $('#loading-screen').fadeOut('slow');
+        });
+
+        // 3. Fungsi Buka Undangan
+        function startInvitation() {
+            // Putar Musik
+            document.getElementById('backsound').play();
+            document.getElementById('music-icon').classList.add('rotating');
+            
+            // Transisi Cover
+            $('#coverModal').css({'transform': 'translateY(-100%)', 'opacity': '0'});
+            $('#content').fadeIn(2000);
+            
+            setTimeout(() => { $('#coverModal').hide(); }, 1000);
+        }
+
+        // 4. Music Control
+        function controlMusic() {
+            const audio = document.getElementById('backsound');
+            const icon = document.getElementById('music-icon');
+            if (audio.paused) {
+                audio.play();
+                icon.classList.add('rotating');
+            } else {
+                audio.pause();
+                icon.classList.remove('rotating');
+            }
+        }
+    </script>
+</body>
+      </html>

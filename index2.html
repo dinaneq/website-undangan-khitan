@@ -1,136 +1,263 @@
 <!DOCTYPE html>
-<html translate="no">
+<html class="no-js">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=0.75, maximum-scale=0.75, user-scalable=no" />
-    <title>Walimatul Khitan Farell Raydiansyah</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Undangan — Walimatul Khitan Farell Raydiansyah</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <meta name="description" content="Rabu, 21 Januari 2026" />
-    <meta property="og:title" content="Walimatul Khitan Farell Raydiansyah" />
-    <meta property="og:image" content="img/farel.jpg" />
+    <meta name="title" content="Undangan Walimatul Khitan Farell Raydiansyah">
+    <meta name="description" content="Mohon doa restu dan kehadirannya dalam acara Walimatul Khitan putra kami, Farell Raydiansyah.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://farel.pages.dev">
+    <meta property="og:title" content="Undangan Walimatul Khitan Farell Raydiansyah">
+    <meta property="og:description" content="Mohon doa restu dan kehadirannya dalam acara Walimatul Khitan putra kami, Farell Raydiansyah.">
+    <meta property="og:image" content="https://farel.pages.dev/img/farel.jpg">
 
-    <link rel="stylesheet" href="https://share.linkundangan.com/css/coffee.css" />
-    <link rel="stylesheet" href="https://share.linkundangan.com/css/linkundangan-styling.css" />
-    <link rel="stylesheet" href="https://share.linkundangan.com/Templates/KHITAN-PREMIUM013/assets/css/bootstrap5.min.css" />
-    <link rel="stylesheet" href="https://share.linkundangan.com/Templates/KHITAN-PREMIUM013/assets/css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3391/3391158.png">
+
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
     
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
     <style>
-        /* Penyesuaian Background agar sesuai dengan gambar lokal kamu */
-        #coverModal .modal-content {
-            background-image: linear-gradient(1deg, #cbcbcbb0, #ffffff52), url('images/img_bg_2.jpg');
-            background-size: cover;
-            background-position: center top;
+        .fh5co-nav-toggle { display: none !important; }
+        #fh5co-offcanvas { display: none !important; }
+
+        /* Floating WhatsApp Button */
+        .fab-share-wa {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            z-index: 9999;
+            background-color: #25d366;
+            color: white !important;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 2px 5px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            text-decoration: none !important;
         }
-        .bg-header {
-            background-image: linear-gradient(1deg, #fffffffc, #ffffff52), url('images/img_bg_2.jpg');
-            background-size: cover;
+        .fab-share-wa:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
         }
-        body {
-            background-image: url('https://www.linkundangan.com/BgroundBsound/bgwhiteee.jpg');
-            background-size: contain;
+        .fab-share-wa i {
+            font-size: 30px;
         }
-        .img-profile-khitan {
-            width: 180px; height: 180px; border-radius: 0 40px; 
-            object-fit: cover; border: 5px solid white; box-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+
+        /* Perbaikan Map Responsif */
+        .responsive-map {
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
     </style>
+
+    <script src="js/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
 
-    <div id="loadingpage" style="display:flex; flex-direction: column; justify-content: center; position:fixed; width:100vw; height:100vh; background:white; z-index:10000; text-align:center;">
-        <div class="coffee"><div></div><div></div><div></div></div>
-        <div class="plate"></div>
-        <p style="font-family:'dmsans'; color: #6c3333; margin-top:20px;">MOHON TUNGGU...</p>
-    </div>
-
-    <audio id="bgAudio" loop>
-        <source src="audio.mp3" type="audio/mpeg">
+    <audio id="myAudio" loop>
+      <source src="audio.mp3" type="audio/mpeg" />
     </audio>
 
-    <div id="coverModal" style="position:fixed; width:100%; height:100%; z-index:9999; display:flex; align-items:center; justify-content:center;">
-        <div class="modal-content" style="height:100%; width:100%; display:flex; align-items:center; justify-content:center; text-align:center; color:white;">
-            <div class="card animate__animated animate__fadeIn" style="text-shadow: 3px 3px 5px #56473b; background:transparent; border:none;">
-                <h5 style="letter-spacing: 5px;">WALIMATUL KHITAN</h5>
-                <div class="py-4">
-                    <img src="img/farel.jpg" class="img-profile-khitan" alt="Farell">
-                </div>
-                <h1 style="font-family:'Sacramento', cursive; font-size: 4rem;">Farell Raydiansyah</h1>
-                
-                <div style="background: rgba(255,255,255,0.2); border-radius:15px; padding:15px; margin:20px auto; max-width:300px; backdrop-filter:blur(5px);">
-                    <p style="font-size: 10pt; margin-bottom:5px;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
-                    <h3 id="guest-name" style="font-weight:bold;">Tamu Undangan</h3>
-                </div>
-
-                <button onclick="bukaUndangan()" class="btn btn-lg btn-primary rounded-pill px-5" style="background-color:#6c3333; border:none;">
-                    <i class="bi bi-envelope-open-fill me-2"></i> BUKA UNDANGAN
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="main-content" style="display:none;">
-        <div class="bg-header text-center py-5">
-            <h1 style="font-family:'Sacramento'; font-size: 4rem; color:#452626;">Farell Raydiansyah</h1>
-            <p>Sikapat, 21 Januari 2026</p>
-        </div>
-
-        <div class="container py-5 text-center" style="font-family:'dmsans';">
-            <p class="mb-5">Assalamuallaikum Wr. Wb. Dengan memohon rahmat Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara khitan putra kami:</p>
-            
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-5">
-                    <div class="card shadow-sm border-0 p-4" style="border-radius: 0 30px; border-left: 5px solid #6c3333 !important;">
-                        <h4 class="fw-bold">Tasyakuran</h4>
-                        <p>Minggu - Selasa<br>18 - 20 Januari 2026</p>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="card shadow-sm border-0 p-4" style="border-radius: 0 30px; border-left: 5px solid #6c3333 !important;">
-                        <h4 class="fw-bold">Khitan</h4>
-                        <p>Rabu<br>21 Januari 2026</p>
+    <div id="page">
+        <header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/img_bg_2.jpg);" data-stellar-background-ratio="0.5">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="display-t">
+                            <div class="display-tc animate-box" data-animate-effect="fadeIn">
+                                <h3 style="font-size: 25px; color: white;"><strong>السلام عليكم ورحمة الله وبركاته</strong></h3>
+                                <h1 style="font-size: 45px;">Walimatul Khitan<br/>Farell Raydiansyah</h1>
+                                <div class="simply-countdown simply-countdown-one"></div>
+                                <p><a href="#fh5co-couple" class="btn btn-default btn-sm" onclick="playAudio()">Lihat Undangan</a></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </header>
 
-            <div class="mt-5 p-4 bg-white shadow-sm rounded-3">
-                <h4 class="fw-bold mb-4">LOKASI ACARA</h4>
-                <p>Sikapat RT 02 RW 05, Grumbul Watujaran, Kec. Sumbang, Banyumas</p>
-                <div style="border-radius:20px; overflow:hidden; border: 5px solid #f8f9fa;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3957.170417978255!2d109.26317727404176!3d-7.334185172129532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjAnMDMuMSJTIDEwOcKwMTUnNTYuNyJF!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid&maptype=satellite5" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div id="fh5co-couple">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                        <h2>Assalamuallaikum Wr WB</h2>
+                        <p>Dengan memohon Rahmat dan Ridho Allah Swt Kami sekeluarga mengharap kehadiran Bapak/Ibu/Saudara (i) untuk memberikan Doa Restu pada acara <br/> Walimatul Khitan Putra kami</p>
+                    </div>
                 </div>
-                <a href="https://www.google.com/maps?q=-7.3117596,109.2653438" target="_blank" class="btn btn-dark mt-3 rounded-pill px-4">
-                    <i class="bi bi-geo-alt-fill me-2"></i> Buka Google Maps
-                </a>
+                <div class="couple-wrap animate-box">
+                    <div class="couple-half" style="float: none; margin: 0 auto; width: 100%; text-align: center;">
+                        <div class="groom">
+                            <img src="img/farel.jpg" alt="Farell Raydiansyah" class="img-responsive" style="margin: 0 auto; border-radius: 50%;">
+                        </div>
+                        <div class="desc-groom">
+                            <h3><strong>Farell Raydiansyah</strong></h3>
+                            <p>Putra Tercinta</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <footer class="text-center py-5">
-            <p>Hormat Kami,</p>
-            <h4 class="fw-bold">Keluarga Bpk. Slamet & Ibu Warsih</h4>
+        <div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+                        <span>Bismillah</span>
+                        <h2>Waktu & Lokasi Acara</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="col-md-6 col-sm-6 text-center">
+                            <div class="event-wrap animate-box">
+                                <h3>Tasyakuran</h3>
+                                <i class="icon-calendar"></i>
+                                <span>Minggu-Selasa</span>
+                                <span>18-20 Januari 2026</span>
+                                <span>29 Rajab - 1 Syaban 1447 H</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-center">
+                            <div class="event-wrap animate-box">
+                                <h3>Khitan</h3>
+                                <i class="icon-calendar"></i>
+                                <span>Rabu</span>
+                                <span>21 Januari 2026</span>
+                                <span>2 Syaban 1447 H</span>                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <div class="event-wrap animate-box">
+                            <h3>Lokasi Acara</h3>
+                            <span>Sikapat RT 02 RW 05, Grumbul Watujaran, Kec. Sumbang, Kabupaten Banyumas 53183 <br/>(Kediaman Bapak Slamet (Mame))</span>            
+                            <div class="responsive-map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.702787883296!2d109.281878!3d-7.3871!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwMjMnMTMuNiJTIDEwOcKwMTYnNTQuOCJF!5e0!3m2!1sid!2sid!4v1672560000000!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <p style="margin-top: 15px;">
+                                <a href="https://goo.gl/maps/xyz" target="_blank" class="btn btn-primary btn-sm">Buka di Google Maps</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fh5co-gallery" class="fh5co-section-gray">
+            <div class="container">
+                <div class="row text-center fh5co-heading animate-box">
+                    <span>Kenangan Kami</span>
+                    <h2>Farell Raydiansyah</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 animate-box">
+                        <div class="owl-carousel owl-carousel-fullwidth">
+                            <div class="item"><img src="img/1.jpg" class="img-responsive" style="margin: 0 auto; border-radius: 10px;"></div>
+                            <div class="item"><img src="img/2.jpg" class="img-responsive" style="margin: 0 auto; border-radius: 10px;"></div>
+                            <div class="item"><img src="img/3.jpg" class="img-responsive" style="margin: 0 auto; border-radius: 10px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row animate-box">
+                    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+                        <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir dan memberikan doa terbaik untuk putra kami.</p>
+                        <p>Hormat Kami</p>
+                        <p><strong>Keluarga Bapak Slamet (Mame)</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer id="fh5co-footer" role="contentinfo">
+            <div class="container">
+                <div class="row copyright">
+                    <div class="col-md-12 text-center">
+                        <p><small class="block">© 2026 Farell Raydiansyah.</small></p>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        // 1. Ambil Nama Tamu dari URL ?kepada=
-        const urlParams = new URLSearchParams(window.location.search);
-        const tamu = urlParams.get('kepada');
-        if (tamu) {
-            document.getElementById('guest-name').innerText = tamu.replace(/\+/g, ' ');
-        }
+    <a href="#" id="shareWA" class="fab-share-wa" target="_blank">
+        <i class="bi bi-whatsapp"></i>
+    </a>
 
-        // 2. Kontrol Loading Page
-        $(window).on('load', function() {
-            setTimeout(() => { $('#loadingpage').fadeOut(); }, 1500);
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+    </div>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/magnific-popup-options.js"></script>
+    <script src="js/simplyCountdown.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        // Set Countdown
+        var d = new Date(2026, 0, 21);
+        simplyCountdown('.simply-countdown-one', {
+            year: d.getFullYear(),
+            month: d.getMonth() + 1,
+            day: d.getDate(),
+            enableUtc: false
         });
 
-        // 3. Fungsi Buka Undangan
-        function bukaUndangan() {
-            document.getElementById('bgAudio').play();
-            $('#coverModal').fadeOut(1000);
-            $('#main-content').fadeIn(1500);
+        // Owl Carousel
+        $(document).ready(function(){
+            $('.owl-carousel-fullwidth').owlCarousel({
+                items: 1,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                smartSpeed: 800,
+                nav: false
+            });
+
+            // Set WhatsApp Link
+            var currentUrl = window.location.href;
+            var shareText = encodeURIComponent("Assalamu'alaikum, kami mengundang Anda ke acara Walimatul Khitan Farell Raydiansyah. Cek undangannya di sini: ");
+            $('#shareWA').attr('href', 'https://wa.me/?text=' + shareText + currentUrl);
+        });
+
+        // Function Play Audio (Dipicu klik tombol Lihat Undangan)
+        function playAudio() {
+            var x = document.getElementById("myAudio");
+            x.play();
         }
     </script>
 </body>
-</html>
+        </html>
